@@ -1,4 +1,4 @@
-public class KeyValueStudentConverter implements IStudentStringConverter{
+public class KeyValueStudentConverter implements IStudentStringConverter {
     @Override
     public String converter(Student student) {
 
@@ -7,7 +7,6 @@ public class KeyValueStudentConverter implements IStudentStringConverter{
         build.append("Возраст: ").append(student.age).append("\n");
         build.append("Название факультета: ").append(student.faculty).append("\n");
         build.append("Размер стипендии: ").append(student.scholarship).append("\n");
-
 
         return build.toString();
     }

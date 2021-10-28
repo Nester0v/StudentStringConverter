@@ -15,8 +15,20 @@ public class Main {
 
         System.out.println(result1);
 
-        IStudentStringConverter converter2 = randomConvert();
+    }
 
+    private void doPrinterTask(){
+        IStudentPrinter[] printers = new IStudentPrinter[]{
+                new ConsolePrinter(new XmlStudentConverter()),
+                new ConsolePrinter(new JsonStudentConverter()),
+                new ConsolePrinter(new KeyValueStudentConverter()),
+                new AbsencePrinter()
+        };
+
+        Student stud1 = new Student("Олег",
+                "Радиоэлектроники, телекомуникаций и компютерных сетей", 19, new BigDecimal(1920));
+        IStudentPrinter printer = new DelegatingStudentPrinter(printers);
+        printer.print(stud1);
 
     }
 
