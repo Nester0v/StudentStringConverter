@@ -4,7 +4,7 @@ public class JsonStudentConverter implements IStudentStringConverter {
     public String converter(Student student) {
 
         StringBuilder build = new StringBuilder();
-        build.append("__________________________________________________________________________________").append('\n');
+        build.append("{").append('\n');
         build.append("\t")
                 .append("\"").append("Имя студента").append("\"").
                 append(": ")
@@ -28,7 +28,7 @@ public class JsonStudentConverter implements IStudentStringConverter {
                 append(": ")
                 .append("\"").append(student.scholarship).append("\"")
                 .append(",").append("\n");
-        build.append("__________________________________________________________________________________").append('\n');
+        build.append("}").append('\n');
 
         return build.toString();
     }
